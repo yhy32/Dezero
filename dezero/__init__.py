@@ -1,6 +1,8 @@
 is_simple_core = False
 from dezero.utils import get_dot_graph
 from dezero.utils import plot_dot_graph
+from dezero.models import Model
+from dezero.datasets import DataLoader
 if is_simple_core:
     from dezero.core_simple import Variable
     from dezero.core_simple import Function

@@ -211,7 +211,7 @@ def setup_variable():
     Variable.__truediv__ = div
     Variable.__rtruediv__ = rdiv
     Variable.__pow__ = pow
-
+    Variable.__getitem__ = dezero.functions.get_item
 class Config:
     enable_backprop = True
 @contextlib.contextmanager
@@ -225,3 +225,6 @@ def using_config(name, value):
 
 def no_grad():
     return using_config('enable_backprop', False)
+
+class Parameter(Variable):
+    pass

@@ -86,3 +86,9 @@ def reshape_sum_backward(gy, x_shape, axis, keepdims):
 
     gy = gy.reshape(shape)
     return gy
+
+def softmax(x, axis=1):
+    x_max = x.max(axis=axis, keepdims=True)
+    y = np.exp(x - x_max)
+    sum_y = np.sum(y, axis=axis, keepdims=True)
+    return y / sum_y
